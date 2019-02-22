@@ -69,7 +69,7 @@ public class LibrariesAdapter extends RecyclerView.Adapter<LibrariesAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView countryItem, countPicItem;
+        TextView countryItem;
         ImageView iconItem;
         CardView cardViewItem;
         RelativeLayout relativeLayoutItem;
@@ -81,7 +81,7 @@ public class LibrariesAdapter extends RecyclerView.Adapter<LibrariesAdapter.View
             cardViewItem = itemView.findViewById(R.id.cardViewItems);
             countryItem = itemView.findViewById(R.id.countryItems);
             iconItem = itemView.findViewById(R.id.iconItems);
-            countPicItem = itemView.findViewById(R.id.countPicItems);
+            //countPicItem = itemView.findViewById(R.id.countPicItems);
 
         }
     }
