@@ -6,8 +6,8 @@ import android.os.Parcelable;
 public class Libraries implements Parcelable {
 
     private int id;
-    private String imgRecyclerView;
-    private String tittle;
+    private String imgRecycler;
+    private String title;
     private String country;
     private String mainDescription;
     private String history;
@@ -23,30 +23,30 @@ public class Libraries implements Parcelable {
     private String img5;
     private String img6;
 
-    public Libraries(int id, String imgRecyclerView, String tittle, String country, String mainDescription, String history, String construction, String jewel, String curiosity, String desingBy, String address, String img1, String img2, String img3, String img4, String img5, String img6) {
-        this.id = id;
-        this.imgRecyclerView = imgRecyclerView;
-        this.tittle = tittle;
-        this.country = country;
-        this.mainDescription = mainDescription;
-        this.history = history;
-        this.construction = construction;
-        this.jewel = jewel;
-        this.curiosity = curiosity;
-        this.desingBy = desingBy;
-        this.address = address;
-        this.img1 = img1;
-        this.img2 = img2;
-        this.img3 = img3;
-        this.img4 = img4;
-        this.img5 = img5;
-        this.img6 = img6;
+    protected  Libraries(Parcel in){
+
+        id = in.readInt();
+        title = in.readString();
+        country = in.readString();
+        mainDescription = in.readString();
+        history = in.readString();
+        construction = in.readString();
+        jewel = in.readString();
+        curiosity = in.readString();
+        desingBy = in.readString();
+        address = in.readString();
+        img1 = in.readString();
+        img2 = in.readString();
+        img3 = in.readString();
+        img4 = in.readString();
+        img5 = in.readString();
+        img6 = in.readString();
     }
 
 
-
-
-    protected Libraries(Parcel in) {
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Libraries> CREATOR = new Creator<Libraries>() {
@@ -61,12 +61,6 @@ public class Libraries implements Parcelable {
         }
     };
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-
     public int getId() {
         return id;
     }
@@ -75,20 +69,20 @@ public class Libraries implements Parcelable {
         this.id = id;
     }
 
-    public String getImgRecyclerView() {
-        return imgRecyclerView;
+    public String getImgRecycler() {
+        return imgRecycler;
     }
 
-    public void setImgRecyclerView(String imgRecyclerView) {
-        this.imgRecyclerView = imgRecyclerView;
+    public void setImgRecycler(String imgRecycler) {
+        this.imgRecycler = imgRecycler;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getCountry() {
@@ -207,12 +201,13 @@ public class Libraries implements Parcelable {
         return CREATOR;
     }
 
+
     @Override
     public void writeToParcel(Parcel desc, int flags) {
 
         desc.writeInt(id);
-        desc.writeString(imgRecyclerView);
-        desc.writeString(tittle);
+        desc.writeString(imgRecycler);
+        desc.writeString(title);
         desc.writeString(country);
         desc.writeString(mainDescription);
         desc.writeString(history);
@@ -228,4 +223,7 @@ public class Libraries implements Parcelable {
         desc.writeString(img6);
 
     }
+
+
+
 }

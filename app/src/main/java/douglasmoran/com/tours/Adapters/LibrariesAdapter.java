@@ -10,22 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import douglasmoran.com.tours.LibraryDetails;
+import douglasmoran.com.tours.LibraryDetailActivity;
 import douglasmoran.com.tours.Models.Libraries;
 import douglasmoran.com.tours.R;
 
-public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHolder> {
+public class LibrariesAdapter extends RecyclerView.Adapter<LibrariesAdapter.ViewHolder> {
 
     Context context;
     ArrayList<Libraries> libraries;
 
-    public LibraryAdapter(Context context, ArrayList<Libraries> libraries) {
+    public LibrariesAdapter(Context context, ArrayList<Libraries> libraries) {
         this.context = context;
         this.libraries = libraries;
     }
@@ -47,13 +48,13 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHold
 
         viewHolder.countryItem.setText(library.getCountry());
 
-        Glide.with(context).load(library.getImgRecyclerView()).into(viewHolder.iconItem);
+        Glide.with(context).load(library.getImgRecycler()).into(viewHolder.iconItem);
 
 
-        viewHolder.linearLayoutItem.setOnClickListener(new View.OnClickListener() {
+        viewHolder.relativeLayoutItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, LibraryDetails.class);
+                Intent intent = new Intent(context, LibraryDetailActivity.class);
                 intent.putExtra("detail", library);
                 context.startActivity(intent);
             }
@@ -68,19 +69,19 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView countryItem, countPic;
+        TextView countryItem, countPicItem;
         ImageView iconItem;
         CardView cardViewItem;
-        LinearLayout linearLayoutItem;
+        RelativeLayout relativeLayoutItem;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            linearLayoutItem = itemView.findViewById(R.id.linearItem);
-            cardViewItem = itemView.findViewById(R.id.cardViewItem);
-            countryItem = itemView.findViewById(R.id.country_city);
-            iconItem = itemView.findViewById(R.id.iconsItem);
-            countPic = itemView.findViewById(R.id.countPic);
+            relativeLayoutItem = itemView.findViewById(R.id.relativeItems);
+            cardViewItem = itemView.findViewById(R.id.cardViewItems);
+            countryItem = itemView.findViewById(R.id.countryItems);
+            iconItem = itemView.findViewById(R.id.iconItems);
+            countPicItem = itemView.findViewById(R.id.countPicItems);
 
         }
     }

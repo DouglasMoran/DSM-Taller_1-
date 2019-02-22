@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LibraryDetails"
+    tools:context=".LibraryDetailActivity"
     android:orientation="vertical"
+    android:id="@+id/contentCardsDetails"
     >
 
 
@@ -88,7 +89,7 @@
 
 
             <TextView
-                android:id="@+id/country_city_Details"
+                android:id="@+id/countryDetails"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +104,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tittle_details"
+            android:id="@+id/titleDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -122,7 +123,7 @@
             >
 
             <TextView
-                android:id="@+id/descriptionMain_Details"
+                android:id="@+id/descriptionMainDetails"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Dos leones de piedra (a partir del mármol de Tennessee) se sitúan a ambos lados de la escalera de la entrada. La famosa pareja se guarda la entrada esculpida por Edward Clark Potter. Sus nombres originales, 'Leo Astor' y 'Leo Lenox'"
@@ -138,4 +139,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>
